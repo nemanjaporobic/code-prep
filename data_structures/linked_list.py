@@ -24,18 +24,18 @@ class LinkedList:
             curr = curr.next
         return -1
 
-    def insertHead(self, val: int) -> None:
+    def insert_head(self, val: int) -> None:
         new_node = ListNode(val)
         new_node.next = self.head.next
         self.head.next = new_node
         if not new_node.next:
             self.tail = new_node
 
-    def insertTail(self, val: int) -> None:
+    def insert_tail(self, val: int) -> None:
         self.tail.next = ListNode(val)
         self.tail = self.tail.next
 
-    def addAtIndex(self, index: int, val: int) -> bool:
+    def add_at_index(self, index: int, val: int) -> bool:
         new_node = ListNode(val)
         i = 0
         curr = self.head
@@ -63,7 +63,7 @@ class LinkedList:
             return True
         return False
 
-    def getValues(self) -> List[int]:
+    def get_values(self) -> List[int]:
         curr = self.head.next
         res = []
         while curr:
@@ -76,25 +76,25 @@ if __name__ == "__main__":
     # Test case:
     # ["insertHead", 1, "insertTail", 2, "insertHead", 0, "remove", 1, "getValues"]
     ll = LinkedList()
-    print(f"Init linked list: {ll.getValues()}")
-    ll.insertHead(1)
-    print(f"Insert head with val 1: {ll.getValues()}")
-    ll.insertTail(2)
-    print(f"Insert tail with val 2: {ll.getValues()}")
-    ll.insertHead(0)
-    print(f"Insert head with val 0: {ll.getValues()}")
+    print(f"Init linked list: {ll.get_values()}")
+    ll.insert_head(1)
+    print(f"Insert head with val 1: {ll.get_values()}")
+    ll.insert_tail(2)
+    print(f"Insert tail with val 2: {ll.get_values()}")
+    ll.insert_head(0)
+    print(f"Insert head with val 0: {ll.get_values()}")
     ll.remove(1)
-    print(f"Remove el at index 1: {ll.getValues()}")
+    print(f"Remove el at index 1: {ll.get_values()}")
 
     print("--------------------------------------------")
     # Test case:
     # ["insertHead", 1, "insertHead", 2, "get", 5]
     ll = LinkedList()
-    print(f"Init linked list: {ll.getValues()}")
-    ll.insertHead(1)
-    print(f"Insert head with val 1: {ll.getValues()}")
-    ll.insertHead(2)
-    print(f"Insert head with val 2: {ll.getValues()}")
+    print(f"Init linked list: {ll.get_values()}")
+    ll.insert_head(1)
+    print(f"Insert head with val 1: {ll.get_values()}")
+    ll.insert_head(2)
+    print(f"Insert head with val 2: {ll.get_values()}")
     print(f"Get el at 5 index: {ll.get(5)}")
-    ll.addAtIndex(1, 10)
-    print(f"Insert 10 at index 1: {ll.getValues()}")
+    ll.add_at_index(1, 10)
+    print(f"Insert 10 at index 1: {ll.get_values()}")
