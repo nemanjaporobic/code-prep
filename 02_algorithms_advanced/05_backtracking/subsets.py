@@ -39,3 +39,13 @@ def helper2(i, nums, cur_set, subsets):
     while i + 1 < len(nums) and nums[i] == nums[i + 1]:
         i += 1
     helper2(i + 1, nums, cur_set, subsets)
+
+
+if __name__ == '__main__':
+    arr = [1, 2, 3]
+    arr1 = [1, 2, 2, 3]
+    res1 = subsets_without_duplicates(arr)
+    res2 = subsets_with_duplicates(arr1)
+
+    print(f'Subsets result without duplicates: {res1}')
+    print(f'Subsets result with duplicates: {res2}')
