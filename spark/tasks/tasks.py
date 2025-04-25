@@ -37,6 +37,27 @@ def run() -> None:
     ]
     orders = spark.createDataFrame(orders_data, ['id', 'employee_id', 'order_date'])
 
+    customers = spark.createDataFrame([
+        (1, 'Alice'),
+        (2, 'Bob'),
+        (3, 'Charlie')
+    ], ['id', 'name'])
+
+    transactions = spark.createDataFrame([
+        (101, 1, '2024-01-01', 200),
+        (102, 2, '2024-01-05', 400),
+        (103, 1, '2024-01-15', 150),
+        (104, 1, '2024-01-22', 100)
+    ], ['id', 'customer_id', 'order_date', 'amount'])
+
+    web_logs = spark.createDataFrame([
+        (1, "2024-01-01 10:00:00"),
+        (1, "2024-01-01 10:05:00"),
+        (1, "2024-01-01 11:00:00"),
+        (2, "2024-01-01 09:00:00"),
+        (2, "2024-01-01 09:45:00")
+    ], ['customer_id', 'timestamp'])
+
     print('finish')
 
 
@@ -55,4 +76,8 @@ if __name__ == '__main__':
 
     # df_exploded = df.withColumn("color", explode("favorite_colors"))
     # df_color_count = df_exploded.groupBy("color").count()
+
+    # joined_df = orders_df.join(customers_df, on="cust_id", how="inner")
+    # unknown_cust_orders = orders_df.join(customers_df, on="cust_id", how="left_anti")
+    # no_order_customers = customers_df.join(orders_df, on="cust_id", how="left_anti")
 

@@ -55,3 +55,39 @@ You have two DataFrames: orders and customers.
 1. Join orders with employees.
 2. Identify orders with missing employees.
 3. Find employees with no orders.
+
+## 6. Customer purchase frequency
+You are given 2 tables, customers and transactions:
+
+| id  | name    |
+|-----|---------|
+| 1   | Alice   |
+| 2   | Bob     |
+| 3   | Charlie |
+
+| id  | customer_id  | order_date | amount |
+|-----|--------------|------------|--------|
+| 100 | 1            | 2024-01-01 | 200    |
+| 101 | 2            | 2024-01-03 | 400    |
+| 102 | 1            | 2024-01-05 | 150    |
+| 103 | 1            | 2024-01-07 | 100    |
+
+### Tasks:
+
+1. Count the number of transactions per customer.
+2. Find customers who have spent more than $300 in total.
+3. Join results to show: name, total_spent, and txn_count.
+
+## 7. Sessionize Web Logs
+
+| user_id | timestamp         |
+|---------|-------------------|
+| 1       | 2024-01-01 10:00  |
+| 1       | 2024-01-01 10:05  |
+| 1       | 2024-01-01 11:00  |
+| 2       | 2024-01-01 09:00  |
+| 2       | 2024-01-01 09:45  |
+
+### Tasks:
+1. Define a session as a sequence of actions no more than 30 minutes apart.
+2. Assign session numbers per user.
